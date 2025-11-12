@@ -1,0 +1,24 @@
+import { Routes,Route } from 'react-router-dom'
+import Home from './components/home'
+import Jobs from './components/jobs'
+import JobsItemDetails from './components/jobsItemsDetails'
+import Login from './components/login'
+import NotFound from './components/notfound'
+import ProtectedRoute from './components/protectedRoute'
+import './App.css'
+
+function App() {
+
+  return (
+    <Routes>
+      <Route path="/" element={<ProtectedRoute Component = {Home}/>}></Route>
+      <Route path="/login" element={<Login/>}></Route>
+      <Route path="/jobs" element={<ProtectedRoute Component = {Jobs}/>}></Route>
+      <Route path="/jobs/:id" element={<JobsItemDetails/>}></Route>
+      <Route path="/" element={<ProtectedRoute Component = {Home}/>}></Route>
+      <Route path = '/*' element = {<NotFound/>}></Route>
+    </Routes>
+  )
+}
+
+export default App
