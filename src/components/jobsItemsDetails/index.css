@@ -1,0 +1,10 @@
+.main{
+  background-color: dodgerblue !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.jobs_card,.life_at_company,.skills_req{
+  background-color: rgb(221, 236, 249);
+}

@@ -69,25 +69,27 @@ const Jobs = () => {
 
     return(
         <>
-            <Header/>
-            <br />
-            <div className='w-100 d-flex justify-content-center'>
-                <input onKeyUp = {onUpdateUserIn} type="search" className='form-control border border-pimary w-50' placeholder='Enter your Domain'/>
-            </div>
-            
-            <br />
-            <div className='container'>
-                <div className='row'>
-                    <div className='col-4 p-3 '>
-                        <FilterSection onChangeEmpType = {onChangeEmpType} onChangeSalary={onChangeSalary}/>
+            <div className='main'>
+                <Header/>
+                <br />
+                <div className='w-100 d-flex justify-content-center user_search'>
+                    <input onKeyUp = {onUpdateUserIn} type="search" className='form-control border border-pimary w-50' placeholder='Enter your Domain'/>
+                </div>
+                
+                <br />
+                <div className='container'>
+                    <div className='row'>
+                        <div className='col-12 col-lg-4 p-3 filter_sec'>
+                            <FilterSection onChangeEmpType = {onChangeEmpType} onChangeSalary={onChangeSalary}/>
+                        </div>
+                        <Suspense fallback = {<h1>Loading...</h1>}>
+                            <ul style={{listStyle:"none"}} className='col-12 col-lg-8 p-3 display_all_jobs'>
+                                {
+                                    allValues.jobsArr.map(each=><DisplayAllJobs key={each.id} jobsItem = {each}/>)
+                                }
+                            </ul>
+                        </Suspense>
                     </div>
-                    <Suspense fallback = {<h1>Loading...</h1>}>
-                        <ul style={{listStyle:"none"}} className='col-8 p-3 '>
-                            {
-                                allValues.jobsArr.map(each=><DisplayAllJobs key={each.id} jobsItem = {each}/>)
-                            }
-                        </ul>
-                    </Suspense>
                 </div>
             </div>
         </>

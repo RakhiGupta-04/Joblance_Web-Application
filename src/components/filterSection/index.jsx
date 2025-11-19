@@ -72,7 +72,7 @@ const FilterSection = ({onChangeEmpType, onChangeSalary}) => {
     },[])
 
     const displayProfile = () => (
-        <div className='shadow p-2 rounded'>
+        <div className='shadow p-2 rounded' style={{backgroundColor:"white"}}>
             <img src={allValues.userProfile.profile_image_url}/>
             <h4>{allValues.userProfile.name}</h4>
             <p>{allValues.userProfile.short_bio}</p>
@@ -121,7 +121,7 @@ const FilterSection = ({onChangeEmpType, onChangeSalary}) => {
     }
 
     return(
-        <div>
+        <div  style={{backgroundColor:"rgb(221, 236, 249)"}} className='p-3 rounded shadow'>
             {displayProfile()}<br/>
             <h3>Employment Type</h3>
             {displayEmpList()}

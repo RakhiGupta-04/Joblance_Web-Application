@@ -9,7 +9,7 @@ const DisplayAllJobs = ({jobsItem}) => {
 
     return(
         <Link to={`/jobs/${jobsItem.id}`} style={{ textDecoration: "none", color: "black" }}>
-            <li className='shadow mb-3 p-3 rounded'>
+            <li className='shadow mb-3 p-3 rounded' style={{backgroundColor:"rgb(221, 236, 249)"}}>
                 <div className='d-flex'>
                     <img src={jobsItem.company_logo_url} width="70px" height="70px"/>
                     <div className='m-3'>

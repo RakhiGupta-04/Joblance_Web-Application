@@ -1,8 +1,7 @@
 .home-cont{
     width: 100%;
-    height: 90vh;
+    height: 86vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    color: white;
 }
